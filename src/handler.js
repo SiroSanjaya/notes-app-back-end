@@ -1,3 +1,6 @@
+const { nanoid } = require('nanoid'); // Pastikan untuk mengimpor nanoid
+const notes = []; // Pastikan notes dideklarasikan
+
 const addNoteHandler = (request, h) => {
     const { title, tags, body } = request.payload;
 
@@ -36,19 +39,15 @@ const addNoteHandler = (request, h) => {
     });
     response.code(500);
     return response;
-
-    const getAllNotesHandler = () => ({
-        status: 'success',
-        data: {
-          notes,
-        },
-      });
-      const getAllNotesHandler = () => ({
-        status: 'success',
-        data: {
-          notes,
-        },
-      });
-       
-      module.exports = { addNoteHandler, getAllNotesHandler };
 };
+
+// Definisikan getAllNotesHandler secara terpisah
+const getAllNotesHandler = () => ({
+    status: 'success',
+    data: {
+        notes,
+    },
+});
+
+// Ekspor handler
+module.exports = { addNoteHandler, getAllNotesHandler };

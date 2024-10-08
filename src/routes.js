@@ -1,4 +1,3 @@
-const { addNoteHandler } = require('./handler');
 const { addNoteHandler, getAllNotesHandler } = require('./handler');
 
 const routes = [{
@@ -12,4 +11,5 @@ const routes = [{
         handler: getAllNotesHandler,
     },
 ];
+
 module.exports = routes;
